@@ -1,0 +1,471 @@
+@import url("https://fonts.google.com/specimen/Roboto?query=robo");
+
+body{
+    font-family: "Roboto",sans-serif;
+    background-color: #8CC461;
+    min-height: 100vh;
+    min-width: 100wh;
+    text-transform: uppercase;
+
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+.rock,.paper,.scissors{
+    color: #FFF;
+    letter-spacing: 0.25rem;
+    font-size: 2rem;
+    padding: 0%;
+}
+
+.rock{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.paper{
+    color:#FFF;
+    margin-left: 0.5rem;
+}
+
+.scissors{
+    color: #FFF;
+    margin-left: 0.5rem;
+}
+
+.header{
+    display: flex;
+    height: 30vh;
+    width: 100vw;
+}
+
+
+.scoreboard{
+   display:flex ;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1rem;
+   justify-content: space-between;
+   height:9rem ;
+   width: 100%;
+   max-width: 800px;
+   border: 2px solid #FFF;
+   border-radius: 13px;
+   margin-top: 2.5rem;
+   margin-left: 22rem;
+}
+
+.left-div{
+    display:flexbox;
+    width: 14rem;
+    height: 9rem ;
+    margin-left:0.5rem;
+    margin-top: 0.5rem;
+    
+}
+
+.right-div{
+    display: flex;
+    gap: 2rem;
+    width: 18rem;
+    height: 9rem;
+}
+
+.computer-score-card{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background: #FFF;
+    letter-spacing: 0.1rem;
+    border-radius: 9px;
+    width: 8rem;
+    height: 8rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    
+}
+
+.your-score-card{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background: #FFF;
+    letter-spacing: 0.1rem;
+    border-radius: 9px;
+    width:8rem;
+    height:8rem; 
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+}
+
+.score1{
+    /* padding-top: 7%; */
+    text-align: center;
+    color: #656565;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+}
+
+.score2{
+    text-align: center;
+    /* padding-top: 7%; */
+    color: #656565;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+} 
+
+.right-div span{
+color: #252525;
+text-align: center;
+font-family: "Roboto",sans-serif;
+font-size: 3rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-top: 0.01rem;
+margin-bottom: 0.5rem;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 3rem;
+    
+}
+
+.game{
+    position: relative;
+    display: grid;
+    grid-template-columns: (repeat(2,1fr)); 
+    grid-template-areas: "paper scissors"
+       "rock rock";
+       place-items: center;
+       height: 30rem;
+       width: 30rem;
+       padding-top: 4rem;
+}
+
+.game::before{
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 8.5rem;
+    transform: translateY(50%) rotate(-29.5deg);;
+    width: 20px; 
+    height: 250px;
+    background:  rgba(0, 0, 0, 0.64); 
+    z-index: -1;
+}
+.game::after{
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 20rem;
+    transform: translateY(50%) rotate(29.5deg);;
+    width: 20px; 
+    height: 250px;
+    background:  rgba(0, 0, 0, 0.64); 
+    z-index: -1;
+}
+
+.horizontal-line{
+    position: absolute;
+    left: 14.6rem;
+    width: 20px; 
+    height: 100px;
+    background:  rgba(0, 0, 0, 0.64);
+    bottom: 65%;
+    transform: translateY(50%)rotate(90deg);
+}
+
+.choice-btn{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.choice-btn[data-choice="paper"]{
+   background-image: url(./images/Group\ 1.svg);
+   width: 160px;
+   height: 160px;
+   margin-left: 0%;
+}
+
+.choice-btn[data-choice="scissors"]{
+    background-image: url(./images/Group\ 3\ .svg);
+    width: 160px;
+    height: 160px;
+}
+
+.choice-btn[data-choice="rock"]{
+    background-image: url(./images/Group\ 2\ .svg);
+    width: 160px;
+    height: 160px;
+    margin-left: 100%;
+}
+
+.output{
+    width: 50vw;
+    height: 40vh;
+    margin-left: 20rem;
+    
+}
+.results{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-template-areas: "you-title pc-title"
+    "you-picked pc-picked";
+    max-width: 1000px;
+    margin-top: 0 auto;
+    color: #FFF;
+}
+
+.results_heading{
+    margin-left: 10rem;
+    margin-top: 0rem;
+    
+}
+
+.results__heading{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    padding: 4rem 0 8rem;
+    color:#FFF;
+}
+
+.results__result{
+    min-width: 10rem;
+    max-height: 10rem;
+    background-color: #16213d;
+    border-radius: 50%;
+    transform: scale(1.4);
+    z-index: -1;
+}
+
+
+.results__heading:first-of-type{
+    grid-area: you-title;
+}
+
+.results__heading:last-of-type{
+    grid-area: pc-title;
+}
+
+.results__result:first-of-type{
+    grid-area: you-picked;
+}
+
+.results__result:last-of-type{
+    grid-area: pc-picked;
+}
+
+.results.show-winner{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "you-title,pc-title"
+    "you-picked,pc-picked";
+}
+
+.winner .choice::after{
+    border-radius: 350px;
+    background: rgba(46, 154, 37, 0.39);
+    box-shadow: 0px 1px 62px 0px rgba(0, 0, 0, 0.13);
+    animation: winner 1s ease forwards;
+}
+
+@keyframes winner{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.results__winner{
+    grid-area:result-winner ;
+    display: grid;
+    align-items: center;
+}
+
+.results__text1{
+    font-size: 2.4rem;
+    padding-bottom:1.5rem ;
+}
+
+.results__text2{
+    font-size: 1.5rem;
+    padding: 1.3rem;
+}
+.play-again{
+    background-color: #FFF;
+    outline: none;
+    border: 0.5rem;
+    border-radius:0.5rem ;
+    color: #6B6B6B;
+    padding: 0.6rem 3.5rem;
+    font-family: "Roboto",sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing:0.09rem ;
+    line-height: normal;
+    cursor: pointer;
+}
+.play-again:focus{
+    border: 2px solid transparent;
+}
+.rulesbtn{
+    position: absolute;
+    top: 38rem;
+    right: 10rem;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.00);
+    color: #FFF;
+    padding: 0.6rem 2.5rem;
+    font-family:"Roboto",sans-serif;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: normal;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+  }
+
+.list-item-content{
+    color: #FFF;
+    text-align:left ;
+    font-size: 0.8rem;
+    font-family: 400;
+    font-style: normal;
+    line-height: normal;
+    font-family: "Roboto",sans-serif;
+    text-transform: none;
+    margin-left: 0.8rem;
+}
+
+
+
+
+.point-square{
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex-shrink: 0;
+    background: #FFD600;
+    margin-left: 0.7rem;
+    margin-top: 1.5rem;
+    
+} 
+
+.show-modal {
+    transform: scaleY(1);
+	visibility: visible;
+    
+  }
+
+.modalcontainer{
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s cubic-bezier(0.5, 1.5, 0.5, 0.7);
+    visibility: hidden;
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    flex-shrink: 0;
+    border-radius: 13px;
+    border: 7px solid #FFF;
+    background: #004429;
+    margin-left: 74rem;
+    top: 16rem;
+    padding-bottom: 3rem;
+    
+}
+
+.modal__header{
+   width:17rem;
+   height:2.8rem ;
+}
+
+.modal__heading{
+    display: inline;
+    position: relative;
+    width: 9rem;
+    height: 1rem;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: "Roboto",sans-serif;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    align-items: center;
+    top:1rem ;
+    left: 3.3rem;
+}
+
+.closebutton{
+    position: absolute;
+    top: 14rem;
+    right: 10rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border: 0.3rem solid white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.nextbtn{
+    position: absolute;
+    top: 38rem;
+    right: 0.5rem;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.00);
+    color: #FFF;
+    padding: 0.6rem 2.5rem;
+    font-family:"Roboto",sans-serif;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
